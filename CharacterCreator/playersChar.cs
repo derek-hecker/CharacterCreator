@@ -18,7 +18,8 @@ namespace CharacterCreator
         private int wisdom;
         private int intelligence;
         private int constitution;
-
+        //public Object Race;
+       // public Object Class;
         public string Race { get => race; set => race = value; }
         public string Class { get => @class; set => @class = value; }
         public string Background { get => background; set => background = value; }

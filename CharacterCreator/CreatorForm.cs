@@ -136,5 +136,52 @@ namespace CharacterCreator
             radioButtonBarbarian.Enabled = false;
             radioButtonFighter.Enabled = false;
         }
+
+        private void radioButtonPriest_CheckedChanged(object sender, EventArgs e)
+        {
+            richTextBox4.Clear();
+            Priest priest = new Priest();
+            richTextBox4.Text = priest.DisplayAll();
+        }
+
+        private void richTextBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonSoldier_CheckedChanged(object sender, EventArgs e)
+        {
+            richTextBox4.Clear();
+            Soldier soldier = new Soldier();
+            richTextBox4.Text = soldier.DisplayAll();
+        }
+
+        private void radioButtonNoble_CheckedChanged(object sender, EventArgs e)
+        {
+            richTextBox4.Clear();
+            Noble noble = new Noble();
+            richTextBox4.Text = noble.DisplayAll();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (radioButtonNoble.Checked)
+            {
+                playersCharacter.Background = "Noble";
+            } else if (radioButtonPriest.Checked)
+            {
+                playersCharacter.Background = "Priest";
+            } else if (radioButtonSoldier.Checked)
+            {
+                playersCharacter.Background = "Soldier";
+            } else
+            {
+                richTextBox4.Text = "Please select a Background before continuing";
+                return;
+            }
+            radioButtonSoldier.Enabled = false;
+            radioButtonPriest.Enabled = false;
+            radioButtonNoble.Enabled = false;
+        }
     }
 }

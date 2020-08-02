@@ -48,6 +48,10 @@
   <ItemGroup>
     <Compile Include="Barbarian.cs" />
     <Compile Include="CharacterClass.cs" />
+    <Compile Include="BaseBackground.cs" />
+    <Compile Include="Noble.cs" />
+    <Compile Include="Priest.cs" />
+    <Compile Include="Soldier.cs" />
     <Compile Include="Rogue.cs" />
     <Compile Include="Ranger.cs" />
     <Compile Include="playersChar.cs" />
