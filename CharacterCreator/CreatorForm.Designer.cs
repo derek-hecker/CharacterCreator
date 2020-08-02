@@ -60,7 +60,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonFinalRace = new System.Windows.Forms.Button();
             this.Race_Tab = new System.Windows.Forms.TabControl();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxCharFinal = new System.Windows.Forms.RichTextBox();
+            this.btnFinalCharInfo = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabPage6.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -71,7 +73,9 @@
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.richTextBox1);
+            this.tabPage6.Controls.Add(this.label6);
+            this.tabPage6.Controls.Add(this.btnFinalCharInfo);
+            this.tabPage6.Controls.Add(this.richTextBoxCharFinal);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -402,6 +406,7 @@
             this.rTBRaceDescription.Size = new System.Drawing.Size(566, 184);
             this.rTBRaceDescription.TabIndex = 5;
             this.rTBRaceDescription.Text = "";
+            this.rTBRaceDescription.TextChanged += new System.EventHandler(this.rTBRaceDescription_TextChanged);
             // 
             // label3
             // 
@@ -437,13 +442,32 @@
             this.Race_Tab.Size = new System.Drawing.Size(1471, 592);
             this.Race_Tab.TabIndex = 0;
             // 
-            // richTextBox1
+            // richTextBoxCharFinal
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(92, 40);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(441, 135);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.richTextBoxCharFinal.Location = new System.Drawing.Point(92, 40);
+            this.richTextBoxCharFinal.Name = "richTextBoxCharFinal";
+            this.richTextBoxCharFinal.Size = new System.Drawing.Size(1011, 464);
+            this.richTextBoxCharFinal.TabIndex = 0;
+            this.richTextBoxCharFinal.Text = "";
+            // 
+            // btnFinalCharInfo
+            // 
+            this.btnFinalCharInfo.Location = new System.Drawing.Point(101, 515);
+            this.btnFinalCharInfo.Name = "btnFinalCharInfo";
+            this.btnFinalCharInfo.Size = new System.Drawing.Size(151, 27);
+            this.btnFinalCharInfo.TabIndex = 1;
+            this.btnFinalCharInfo.Text = "Show Character Info";
+            this.btnFinalCharInfo.UseVisualStyleBackColor = true;
+            this.btnFinalCharInfo.Click += new System.EventHandler(this.btnFinalCharInfo_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(89, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Final Character Information";
             // 
             // CreatorForm
             // 
@@ -454,6 +478,7 @@
             this.Name = "CreatorForm";
             this.Text = "Character Creator";
             this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -501,7 +526,9 @@
         private System.Windows.Forms.RadioButton radioButtonHuman;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl Race_Tab;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBoxCharFinal;
+        private System.Windows.Forms.Button btnFinalCharInfo;
+        private System.Windows.Forms.Label label6;
     }
 }
 

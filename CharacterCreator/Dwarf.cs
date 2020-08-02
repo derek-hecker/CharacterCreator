@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,5 +24,11 @@ namespace CharacterCreator
         public bool Darkvision { get => __darkvision; set => __darkvision = value; }
         public string proficiencies { get => __proficiencies; set => __proficiencies = value; }
         public string extra_stuff { get => __extrastuff; set => __extrastuff = value; }
+        public string DisplayAll()
+        {
+            string tmp;
+            tmp = "Description: " + description + "\nProficiencies: " + proficiencies + "\nExtras: " + extra_stuff + "\n";
+            return tmp;
+        }
     }
 }

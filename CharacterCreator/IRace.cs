@@ -12,5 +12,7 @@ namespace CharacterCreator
         bool Darkvision { get; set; }
         string proficiencies { get; set; }
         string extra_stuff { get; set; }
+
+        string DisplayAll();
     }
 }

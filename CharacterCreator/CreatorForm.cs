@@ -17,7 +17,7 @@ namespace CharacterCreator
         public CreatorForm()
         {
             InitializeComponent();
-         
+
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace CharacterCreator
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e) //Barbarian
@@ -61,19 +61,23 @@ namespace CharacterCreator
 
         private void buttonFinalRace_Click(object sender, EventArgs e)
         {
-           if (radioButtonHuman.Checked == true)
+            if (radioButtonHuman.Checked == true)
             {
                 playersCharacter.Race = "Human";
-            } else if (radioButtonElf.Checked == true)
+            }
+            else if (radioButtonElf.Checked == true)
             {
                 playersCharacter.Race = "Elf";
-            } else if (radioButtonDwarf.Checked == true)
+            }
+            else if (radioButtonDwarf.Checked == true)
             {
                 playersCharacter.Race = "Dwarf";
-            } else if (radioButtonGnome.Checked == true)
+            }
+            else if (radioButtonGnome.Checked == true)
             {
                 playersCharacter.Race = "Gnome";
-            } else
+            }
+            else
             {
                 rTBRaceDescription.Text = "Please select a race before submitting";
                 return;
@@ -123,10 +127,12 @@ namespace CharacterCreator
             else if (radioButtonRanger.Checked)
             {
                 playersCharacter.Class = "Ranger";
-            } else if (radioButtonRogue.Checked)
+            }
+            else if (radioButtonRogue.Checked)
             {
                 playersCharacter.Class = "Rogue";
-            } else
+            }
+            else
             {
                 richTextBox3.Text = "Please select a class before submitting";
                 return;
@@ -168,13 +174,16 @@ namespace CharacterCreator
             if (radioButtonNoble.Checked)
             {
                 playersCharacter.Background = "Noble";
-            } else if (radioButtonPriest.Checked)
+            }
+            else if (radioButtonPriest.Checked)
             {
                 playersCharacter.Background = "Priest";
-            } else if (radioButtonSoldier.Checked)
+            }
+            else if (radioButtonSoldier.Checked)
             {
                 playersCharacter.Background = "Soldier";
-            } else
+            }
+            else
             {
                 richTextBox4.Text = "Please select a Background before continuing";
                 return;
@@ -193,12 +202,109 @@ namespace CharacterCreator
                 items.Add(listBox1.Items[i].ToString());
             }
             playersCharacter.Inventory = items;
-          /*  foreach (string o in items)
-            {
-                richTextBox4.Text += o.ToString();
-            }
-            */
+            /*  foreach (string o in items)
+              {
+                  richTextBox4.Text += o.ToString();
+              }
+              */
             listBox1.Enabled = false;
+        }
+
+        private void btnFinalCharInfo_Click(object sender, EventArgs e)
+        {
+            //Need to make Characters default stats match that of chosen race, display relevant info about class abilities.
+            richTextBoxCharFinal.Clear();
+            richTextBoxCharFinal.Text = "Race Info and Base Stat Block: \n";
+            switch (playersCharacter.Race)
+            {
+                case "Elf":
+                    richTextBoxCharFinal.Text += "Race - Elf: \n";
+                    Elf elf = new Elf();
+                    richTextBoxCharFinal.Text += elf.DisplayAll();
+                    break;
+                case "Human":
+                    richTextBoxCharFinal.Text += "Race - Human: \n";
+                    Human human = new Human();
+                    richTextBoxCharFinal.Text += human.DisplayAll();
+                    break;
+                case "Dwarf":
+                    richTextBoxCharFinal.Text += "Race - Dwarf: \n";
+                    Dwarf dwarf = new Dwarf();
+                    richTextBoxCharFinal.Text += dwarf.DisplayAll();
+                    break;
+                case "Gnome":
+                    richTextBoxCharFinal.Text += "Race - Gnome: \n";
+                    Gnome gnome = new Gnome();
+                    richTextBoxCharFinal.Text += gnome.DisplayAll();
+                    break;
+                default:
+                    richTextBoxCharFinal.Text += "Race - Not Selected: \n";
+                    break;
+            }
+            richTextBoxCharFinal.Text += "\nClass Info: \n";
+            switch (playersCharacter.Class)
+            {
+                case "Fighter":
+                    richTextBoxCharFinal.Text += "Class - Fighter: \n";
+                    Fighter fighter = new Fighter();
+                    richTextBoxCharFinal.Text += fighter.DisplayAll();
+                    break;
+                case "Rogue":
+                    richTextBoxCharFinal.Text += "Class - Rogue: \n";
+                    Rogue rogue = new Rogue();
+                    richTextBoxCharFinal.Text += rogue.DisplayAll();
+                    break;
+                case "Barbarian":
+                    richTextBoxCharFinal.Text += "Class - Barbarian: \n";
+                    Barbarian barbarian = new Barbarian();
+                    richTextBoxCharFinal.Text += barbarian.DisplayAll();
+                    break;
+                case "Ranger":
+                    richTextBoxCharFinal.Text += "Class - Ranger: \n";
+                    Ranger ranger = new Ranger();
+                    richTextBoxCharFinal.Text += ranger.DisplayAll();
+                    break;
+                default:
+                    richTextBoxCharFinal.Text += "Race - Not Selected: \n";
+                    break;
+
+            }
+            richTextBoxCharFinal.Text += "\n\nBackground Info: \n";
+            switch (playersCharacter.Background)
+            {
+                case "Noble":
+                    richTextBoxCharFinal.Text += "Class - Noble: \n";
+                    Noble noble = new Noble();
+                    richTextBoxCharFinal.Text += noble.DisplayAll();
+                    break;
+                case "Soldier":
+                    richTextBoxCharFinal.Text += "Class - Soldier: \n";
+                    Soldier soldier = new Soldier();
+                    richTextBoxCharFinal.Text += soldier.DisplayAll();
+                    break;
+                case "Priest":
+                    richTextBoxCharFinal.Text += "Class - Priest: \n";
+                    Priest priest = new Priest();
+                    richTextBoxCharFinal.Text += priest.DisplayAll();
+                    break;
+                default:
+                    richTextBoxCharFinal.Text += "Race - Not Selected: \n";
+                    break;
+            }
+
+            //Display User's Chosen Inventory\
+            richTextBoxCharFinal.Text += "\n\nInventory: \n";
+            foreach (string o in playersCharacter.Inventory)
+            {
+                richTextBoxCharFinal.Text += o.ToString();
+                richTextBoxCharFinal.Text += " ";
+            }
+
+        }
+
+        private void rTBRaceDescription_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
