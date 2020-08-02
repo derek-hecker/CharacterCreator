@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnFinalInventory = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.radioButtonPriest = new System.Windows.Forms.RadioButton();
             this.radioButtonSoldier = new System.Windows.Forms.RadioButton();
@@ -62,6 +60,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonFinalRace = new System.Windows.Forms.Button();
             this.Race_Tab = new System.Windows.Forms.TabControl();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.tabPage6.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -71,28 +71,18 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.richTextBox1);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(1463, 566);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Character Sheet";
+            this.tabPage6.Text = "Character Base Info";
             this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1463, 566);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Ability Scores";
-            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.label6);
-            this.tabPage4.Controls.Add(this.richTextBox2);
+            this.tabPage4.Controls.Add(this.btnFinalInventory);
             this.tabPage4.Controls.Add(this.label5);
             this.tabPage4.Controls.Add(this.listBox1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -117,6 +107,7 @@
             "Shield"});
             this.listBox1.Location = new System.Drawing.Point(35, 40);
             this.listBox1.Name = "listBox1";
+            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox1.Size = new System.Drawing.Size(520, 264);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
@@ -126,26 +117,19 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(34, 17);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 13);
+            this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Double Click to Add";
+            this.label5.Text = "Click to Add";
             // 
-            // richTextBox2
+            // btnFinalInventory
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(583, 41);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(191, 262);
-            this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = "";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(580, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Selected Items";
+            this.btnFinalInventory.Location = new System.Drawing.Point(37, 310);
+            this.btnFinalInventory.Name = "btnFinalInventory";
+            this.btnFinalInventory.Size = new System.Drawing.Size(136, 23);
+            this.btnFinalInventory.TabIndex = 4;
+            this.btnFinalInventory.Text = "Finalize Inventory";
+            this.btnFinalInventory.UseVisualStyleBackColor = true;
+            this.btnFinalInventory.Click += new System.EventHandler(this.btnFinalInventory_Click);
             // 
             // tabPage3
             // 
@@ -446,13 +430,20 @@
             this.Race_Tab.Controls.Add(this.tabPage2);
             this.Race_Tab.Controls.Add(this.tabPage3);
             this.Race_Tab.Controls.Add(this.tabPage4);
-            this.Race_Tab.Controls.Add(this.tabPage5);
             this.Race_Tab.Controls.Add(this.tabPage6);
             this.Race_Tab.Location = new System.Drawing.Point(0, 0);
             this.Race_Tab.Name = "Race_Tab";
             this.Race_Tab.SelectedIndex = 0;
             this.Race_Tab.Size = new System.Drawing.Size(1471, 592);
             this.Race_Tab.TabIndex = 0;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(92, 40);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(441, 135);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
             // 
             // CreatorForm
             // 
@@ -462,6 +453,7 @@
             this.Controls.Add(this.Race_Tab);
             this.Name = "CreatorForm";
             this.Text = "Character Creator";
+            this.tabPage6.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -478,10 +470,8 @@
         #endregion
 
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Button btnFinalInventory;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TabPage tabPage3;
@@ -511,6 +501,7 @@
         private System.Windows.Forms.RadioButton radioButtonHuman;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl Race_Tab;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

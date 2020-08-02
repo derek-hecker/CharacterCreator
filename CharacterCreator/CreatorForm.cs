@@ -183,5 +183,22 @@ namespace CharacterCreator
             radioButtonPriest.Enabled = false;
             radioButtonNoble.Enabled = false;
         }
+
+        private void btnFinalInventory_Click(object sender, EventArgs e)
+        {
+            List<string> items = new List<string>();
+
+            foreach (int i in listBox1.SelectedIndices)
+            {
+                items.Add(listBox1.Items[i].ToString());
+            }
+            playersCharacter.Inventory = items;
+          /*  foreach (string o in items)
+            {
+                richTextBox4.Text += o.ToString();
+            }
+            */
+            listBox1.Enabled = false;
+        }
     }
 }
