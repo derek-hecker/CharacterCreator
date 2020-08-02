@@ -46,7 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Barbarian.cs" />
+    <Compile Include="CharacterClass.cs" />
+    <Compile Include="Rogue.cs" />
+    <Compile Include="Ranger.cs" />
+    <Compile Include="playersChar.cs" />
+    <Compile Include="Fighter.cs" />
     <Compile Include="Gnome.cs" />
     <Compile Include="Elf.cs" />
     <Compile Include="Dwarf.cs" />
