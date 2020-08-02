@@ -12,6 +12,7 @@ namespace CharacterCreator
         public Elf()
         {
             Dexterity = Dexterity + 2;
+ 
         }
         private bool __darkvision = true;
         private string __description = "Elves are a magical people of otherworldly grace, living in the world but not entirely part of it.\n Racial Traits: +2 Dex, Darkvision";

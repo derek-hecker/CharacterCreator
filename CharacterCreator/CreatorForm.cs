@@ -221,21 +221,45 @@ namespace CharacterCreator
                     richTextBoxCharFinal.Text += "Race - Elf: \n";
                     Elf elf = new Elf();
                     richTextBoxCharFinal.Text += elf.DisplayAll();
+                    richTextBoxCharFinal.Text += "Base Strength: " + elf.Strength + "\n";
+                    richTextBoxCharFinal.Text += "Base Dexterity: " + elf.Dexterity + "\n";
+                    richTextBoxCharFinal.Text += "Base Constitution: " + elf.Constitution + "\n";
+                    richTextBoxCharFinal.Text += "Base Wisdom: " + elf.Wisdom + "\n";
+                    richTextBoxCharFinal.Text += "Base Intelligence: " + elf.Intelligence + "\n";
+                    richTextBoxCharFinal.Text += "Base Charisma: " + elf.Charisma + "\n";
                     break;
                 case "Human":
                     richTextBoxCharFinal.Text += "Race - Human: \n";
                     Human human = new Human();
                     richTextBoxCharFinal.Text += human.DisplayAll();
+                    richTextBoxCharFinal.Text += "Base Strength: " + human.Strength + "\n";
+                    richTextBoxCharFinal.Text += "Base Dexterity: " + human.Dexterity + "\n";
+                    richTextBoxCharFinal.Text += "Base Constitution: " + human.Constitution + "\n";
+                    richTextBoxCharFinal.Text += "Base Wisdom: " + human.Wisdom + "\n";
+                    richTextBoxCharFinal.Text += "Base Intelligence: " + human.Intelligence + "\n";
+                    richTextBoxCharFinal.Text += "Base Charisma: " + human.Charisma + "\n";
                     break;
                 case "Dwarf":
                     richTextBoxCharFinal.Text += "Race - Dwarf: \n";
                     Dwarf dwarf = new Dwarf();
                     richTextBoxCharFinal.Text += dwarf.DisplayAll();
+                    richTextBoxCharFinal.Text += "Base Strength: " + dwarf.Strength + "\n";
+                    richTextBoxCharFinal.Text += "Base Dexterity: " + dwarf.Dexterity + "\n";
+                    richTextBoxCharFinal.Text += "Base Constitution: " + dwarf.Constitution + "\n";
+                    richTextBoxCharFinal.Text += "Base Wisdom: " + dwarf.Wisdom + "\n";
+                    richTextBoxCharFinal.Text += "Base Intelligence: " + dwarf.Intelligence + "\n";
+                    richTextBoxCharFinal.Text += "Base Charisma: " + dwarf.Charisma + "\n";
                     break;
                 case "Gnome":
                     richTextBoxCharFinal.Text += "Race - Gnome: \n";
                     Gnome gnome = new Gnome();
                     richTextBoxCharFinal.Text += gnome.DisplayAll();
+                    richTextBoxCharFinal.Text += "Base Strength: " + gnome.Strength + "\n";
+                    richTextBoxCharFinal.Text += "Base Dexterity: " + gnome.Dexterity + "\n";
+                    richTextBoxCharFinal.Text += "Base Constitution: " + gnome.Constitution + "\n";
+                    richTextBoxCharFinal.Text += "Base Wisdom: " + gnome.Wisdom + "\n";
+                    richTextBoxCharFinal.Text += "Base Intelligence: " + gnome.Intelligence + "\n";
+                    richTextBoxCharFinal.Text += "Base Charisma: " + gnome.Charisma + "\n";
                     break;
                 default:
                     richTextBoxCharFinal.Text += "Race - Not Selected: \n";
